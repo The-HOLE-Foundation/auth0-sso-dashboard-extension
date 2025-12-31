@@ -1,0 +1,502 @@
+/**
+ * HOLE Foundation SSO Dashboard Theme
+ * Version: 1.0.0
+ *
+ * Based on HOLE Foundation Design System
+ * - Colors: /HOLE-Assets/Color-System-Tiles/HOLE-Foundation-Colors.js
+ * - Text Styles: /HOLE-Assets/HOLE-Design-System/textStyles.json
+ * - Fonts: /HOLE-Assets/HOLE-Design-System/HOLE-Fonts/WOFF2
+ */
+
+/* ====================
+   FONT IMPORTS
+   ==================== */
+
+@font-face {
+  font-family: 'AgencyFB';
+  src: url('/fonts/AgencyFBCompressedBold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgencyFB';
+  src: url('/fonts/AgencyFBCompressedRegular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'AgencyFB';
+  src: url('/fonts/AgencyFBCompressedLight.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('/fonts/ApercuPro-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Apercu Pro';
+  src: url('/fonts/ApercuPro-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ====================
+   CSS VARIABLES (HOLE FOUNDATION COLORS)
+   ==================== */
+
+:root {
+  /* Primary Colors */
+  --democracy-blue-500: #6d78d3;
+  --democracy-blue-600: #858eea;
+  --democracy-blue-700: #9ea5ff;
+  --democracy-blue-800: #b8bcff;
+
+  /* Surface Colors */
+  --surface-blue-50: #181c30;
+  --surface-blue-100: #282d49;
+  --surface-blue-300: #4e537a;
+  --surface-blue-500: #787da8;
+  --surface-blue-950: #eff1ff;
+
+  /* Transparency Colors */
+  --surface-transparency: #22232b;
+  --democracy-transparency: #3c3d5d;
+
+  /* Warm Grey */
+  --warm-grey-50: #1f1d1d;
+  --warm-grey-300: #585555;
+  --warm-grey-500: #837f7f;
+  --warm-grey-700: #afabab;
+  --warm-grey-950: #f6f3f3;
+
+  /* Success Green */
+  --transparency-green-500: #2c9300;
+  --transparency-green-700: #66c13d;
+  --transparency-green-900: #a2ef7a;
+
+  /* Warning Orange (AI Orange) */
+  --ai-orange-500: #e14e00;
+  --ai-orange-600: #fc6600;
+  --ai-orange-700: #ff8027;
+
+  /* Monochrome */
+  --white: #fdfdf6;
+  --black: #191a1c;
+  --mono-transparency: #1a1a1a;
+
+  /* Typography */
+  --font-display: 'AgencyFB', 'Arial Narrow', sans-serif;
+  --font-body: 'Apercu Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* ====================
+   GLOBAL RESETS
+   ==================== */
+
+body {
+  font-family: var(--font-body);
+  color: var(--warm-grey-50);
+  background-color: var(--surface-blue-50);
+}
+
+/* ====================
+   HEADER STYLING
+   ==================== */
+
+header.dashboard-header {
+  background: linear-gradient(135deg, var(--democracy-blue-500) 0%, var(--democracy-blue-700) 100%) !important;
+  border-bottom: 3px solid var(--transparency-green-700) !important;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+header.dashboard-header nav .navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 36px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: var(--white) !important;
+  padding: 12px 150px 12px 80px;
+}
+
+.navbar-default .navbar-brand:focus,
+.navbar-default .navbar-brand:hover {
+  color: var(--transparency-green-700) !important;
+}
+
+/* Logo Background */
+header.dashboard-header nav #header {
+  background-size: 60px 50px !important;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23fdfdf6' opacity='0.9'/%3E%3Ctext x='50' y='70' font-size='60' font-weight='bold' text-anchor='middle' fill='%236d78d3' font-family='Arial'%3EH%3C/text%3E%3C/svg%3E") !important;
+  background-position: center left 15px;
+  background-repeat: no-repeat;
+}
+
+/* ====================
+   NAVIGATION
+   ==================== */
+
+.navbar-default {
+  background-color: transparent;
+  border: none;
+}
+
+.navbar-nav > li > a {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--white) !important;
+  transition: all 0.2s ease;
+}
+
+.navbar-nav > li > a:hover,
+.navbar-nav > li > a:focus {
+  color: var(--transparency-green-700) !important;
+  background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+/* User Dropdown */
+.btn-username {
+  font-family: var(--font-body);
+  color: var(--white) !important;
+}
+
+.btn-username:hover {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.dropdown-menu {
+  background-color: var(--surface-blue-100);
+  border: 1px solid var(--democracy-blue-600);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-menu > li > a {
+  font-family: var(--font-body);
+  color: var(--white) !important;
+  transition: background-color 0.2s ease;
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+  background-color: var(--democracy-blue-600) !important;
+  color: var(--white) !important;
+}
+
+/* ====================
+   MAIN CONTENT AREA
+   ==================== */
+
+.container {
+  background-color: var(--white);
+  border-radius: 8px;
+  padding: 32px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ====================
+   TYPOGRAPHY
+   ==================== */
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--surface-blue-50);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+h1 {
+  font-size: 58px;
+  margin-bottom: 24px;
+}
+
+h2 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+p, li, span {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.6;
+  color: var(--warm-grey-50);
+}
+
+/* ====================
+   BUTTONS
+   ==================== */
+
+.btn {
+  font-family: var(--font-body);
+  font-weight: 600;
+  border-radius: 5px;
+  padding: 10px 20px;
+  transition: all 0.2s ease;
+  border: none;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--democracy-blue-500), var(--democracy-blue-600));
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: linear-gradient(135deg, var(--democracy-blue-600), var(--democracy-blue-700));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(109, 120, 211, 0.3);
+}
+
+.btn-success {
+  background: linear-gradient(135deg, var(--transparency-green-500), var(--transparency-green-700));
+  color: var(--white);
+}
+
+.btn-success:hover {
+  background: linear-gradient(135deg, var(--transparency-green-700), var(--transparency-green-900));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(44, 147, 0, 0.3);
+}
+
+.btn-danger {
+  background: linear-gradient(135deg, var(--ai-orange-500), var(--ai-orange-600));
+  color: var(--white);
+}
+
+.btn-danger:hover {
+  background: linear-gradient(135deg, var(--ai-orange-600), var(--ai-orange-700));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(252, 102, 0, 0.3);
+}
+
+/* ====================
+   TABLES
+   ==================== */
+
+.table {
+  font-family: var(--font-body);
+}
+
+.table thead {
+  background-color: var(--surface-blue-100);
+  color: var(--white);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 0.05em;
+}
+
+.table tbody tr {
+  transition: background-color 0.2s ease;
+}
+
+.table tbody tr:hover {
+  background-color: var(--surface-blue-950);
+}
+
+.table td {
+  vertical-align: middle;
+  padding: 16px 12px;
+}
+
+/* ====================
+   CARDS / APPLICATION TILES
+   ==================== */
+
+.application-card {
+  background-color: var(--white);
+  border: 1px solid var(--warm-grey-700);
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 16px;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.application-card:hover {
+  border-color: var(--democracy-blue-600);
+  box-shadow: 0 4px 16px rgba(109, 120, 211, 0.2);
+  transform: translateY(-2px);
+}
+
+/* ====================
+   FORMS
+   ==================== */
+
+.form-control {
+  font-family: var(--font-body);
+  border: 1px solid var(--warm-grey-500);
+  border-radius: 5px;
+  padding: 10px 14px;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: var(--democracy-blue-600);
+  box-shadow: 0 0 0 3px rgba(109, 120, 211, 0.1);
+  outline: none;
+}
+
+label {
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 14px;
+  color: var(--surface-blue-100);
+  margin-bottom: 6px;
+}
+
+/* ====================
+   ALERTS / NOTIFICATIONS
+   ==================== */
+
+.alert {
+  font-family: var(--font-body);
+  border-radius: 5px;
+  padding: 16px;
+  margin-bottom: 20px;
+}
+
+.alert-success {
+  background-color: rgba(44, 147, 0, 0.1);
+  border: 1px solid var(--transparency-green-700);
+  color: var(--transparency-green-500);
+}
+
+.alert-danger {
+  background-color: rgba(252, 102, 0, 0.1);
+  border: 1px solid var(--ai-orange-600);
+  color: var(--ai-orange-500);
+}
+
+.alert-info {
+  background-color: rgba(109, 120, 211, 0.1);
+  border: 1px solid var(--democracy-blue-600);
+  color: var(--democracy-blue-500);
+}
+
+/* ====================
+   LOADING STATES
+   ==================== */
+
+.loader,
+.spinner {
+  border-color: var(--democracy-blue-600);
+  border-top-color: var(--transparency-green-700);
+}
+
+/* ====================
+   FOOTER
+   ==================== */
+
+footer {
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: var(--warm-grey-500);
+  text-align: center;
+  padding: 24px;
+  margin-top: 40px;
+  border-top: 1px solid var(--warm-grey-700);
+}
+
+/* ====================
+   RESPONSIVE DESIGN
+   ==================== */
+
+@media (max-width: 768px) {
+  header.dashboard-header nav .navbar-brand {
+    font-size: 24px;
+    padding: 12px 20px 12px 70px;
+  }
+
+  header.dashboard-header nav #header {
+    background-size: 40px 35px !important;
+    background-position: center left 10px;
+  }
+
+  .container {
+    padding: 16px;
+    margin-top: 16px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  h2 {
+    font-size: 28px;
+  }
+}
+
+/* ====================
+   ACCESSIBILITY
+   ==================== */
+
+/* Focus states for keyboard navigation */
+*:focus {
+  outline: 2px solid var(--democracy-blue-600);
+  outline-offset: 2px;
+}
+
+/* Skip to main content link */
+.skip-to-main {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+}
+
+.skip-to-main:focus {
+  left: 10px;
+  top: 10px;
+  background-color: var(--democracy-blue-600);
+  color: var(--white);
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --democracy-blue-500: #4d58b3;
+    --transparency-green-500: #1c7300;
+  }
+}
+
+/* ====================
+   PRINT STYLES
+   ==================== */
+
+@media print {
+  header.dashboard-header {
+    background: white !important;
+    border-bottom: 2px solid black !important;
+  }
+
+  .navbar-brand,
+  h1, h2, h3 {
+    color: black !important;
+  }
+
+  .btn,
+  .dropdown-menu {
+    display: none;
+  }
+}
