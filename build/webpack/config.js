@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
 const StatsWriterPlugin = require('webpack-stats-plugin').StatsWriterPlugin;
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const logger = require('../../server/lib/logger');
 const project = require('../../package.json');
@@ -113,6 +114,12 @@ let config = {
       },
       __CLIENT__: JSON.stringify(true),
       __SERVER__: JSON.stringify(false)
+    }),
+    new CopyWebpackPlugin({
+      patterns: [
+        { from: 'client/fonts', to: 'fonts' },
+        { from: 'hole-foundation-theme.css', to: 'hole-foundation-theme.css' }
+      ]
     }),
 //    new BundleAnalyzerPlugin(),
   ],

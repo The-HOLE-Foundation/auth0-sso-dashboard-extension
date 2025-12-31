@@ -101,7 +101,7 @@ Located at `/Volumes/HOLE-RAID-DRIVE/HOLE-Assets/`:
    - Enable only the connections you want users to see
    - Example: Username-Password-Authentication, Google-OAuth2, etc.
 
-5. **Save** and copy the `Client ID`
+5. **Save** and copy the `Client ID`SFV4AVu8vOl4YbXxkv6Ld4pZaYQXUcD0
 
 ### Step 2: Create Machine-to-Machine (M2M) Client
 
@@ -132,12 +132,27 @@ Located at `/Volumes/HOLE-RAID-DRIVE/HOLE-Assets/`:
 4. **Save** and copy:
    - `Client ID`
    - `Client Secret`
+##Access Token
+{
+  "access_token": "eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNNOG1MQlc0MGUyb3dXUGNudTNDZSJ9.eyJpc3MiOiJodHRwczovL2Rldi00ZnN6b2tsYWNod2RoNDZtLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJNaFp3ZHpxallMRjFFRTFUaUJaNTB3bnhSMTdjeXEyTUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9kZXYtNGZzem9rbGFjaHdkaDQ2bS51cy5hdXRoMC5jb20vYXBpL3YyLyIsImlhdCI6MTc2NzE1NzExNywiZXhwIjoxNzY3MzQzMTE3LCJzY29wZSI6InJlYWQ6Y2xpZW50X2dyYW50cyBjcmVhdGU6Y2xpZW50X2dyYW50cyBkZWxldGU6Y2xpZW50X2dyYW50cyByZWFkOnVzZXJzIHJlYWQ6Y2xpZW50cyB1cGRhdGU6Y2xpZW50cyBkZWxldGU6Y2xpZW50cyBjcmVhdGU6Y2xpZW50cyByZWFkOmNvbm5lY3Rpb25zIHJlYWQ6cmVzb3VyY2Vfc2VydmVycyBjcmVhdGU6cmVzb3VyY2Vfc2VydmVycyByZWFkOmRldmljZV9jcmVkZW50aWFscyByZWFkOmxvZ3MiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiJNaFp3ZHpxallMRjFFRTFUaUJaNTB3bnhSMTdjeXEyTSJ9.pAuAG8nwz-MhBvV1y1gZcTDgBFejCrSFu--5Zbu4zNkvVP7n7iDL6Prp7Wr3LbPLytYKaUghHxtqNW0maukxC8-8p4NvePaeDvGEo1dTUjpSsHlzVHHDTkjhPyvPRS7I0sU5ECNBcH7LiTmR2o6k2bShMmWr-BGy2xNNLn4n57UH51rUIIroEY96w7ZG67R62r6-NE5Z3KSNic36mClivZU1ESnw0rNSwVLH5vSC54IKUG8NGCWW4-e4WTTir89VQelpB9T4ajS7cipJ8G7H_r2VSB783-76vrtlVQmB45MF9FQWc2Ftrre9rVpl5yTvL_1J6iu--q-4XLVz1sy8iA",
+  "token_type": "Bearer"
+}
+API Endpoint
 
-### Step 3: Get Your Auth0 Domain
+https://dev-4fszoklachwdh46m.us.auth0.com/api/v2/<Management API Endpoint>
+
+curl --request GET \
+    --url https://dev-4fszoklachwdh46m.us.auth0.com/api/v2/<Management API Endpoint> \
+    --header 'authorization: Bearer eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCIsImtpZCI6InNNOG1MQlc0MGUyb3dXUGNudTNDZSJ9.eyJpc3MiOiJodHRwczovL2Rldi00ZnN6b2tsYWNod2RoNDZtLnVzLmF1dGgwLmNvbS8iLCJzdWIiOiJNaFp3ZHpxallMRjFFRTFUaUJaNTB3bnhSMTdjeXEyTUBjbGllbnRzIiwiYXVkIjoiaHR0cHM6Ly9kZXYtNGZzem9rbGFjaHdkaDQ2bS51cy5hdXRoMC5jb20vYXBpL3YyLyIsImlhdCI6MTc2NzE1NzExNywiZXhwIjoxNzY3MzQzMTE3LCJzY29wZSI6InJlYWQ6Y2xpZW50X2dyYW50cyBjcmVhdGU6Y2xpZW50X2dyYW50cyBkZWxldGU6Y2xpZW50X2dyYW50cyByZWFkOnVzZXJzIHJlYWQ6Y2xpZW50cyB1cGRhdGU6Y2xpZW50cyBkZWxldGU6Y2xpZW50cyBjcmVhdGU6Y2xpZW50cyByZWFkOmNvbm5lY3Rpb25zIHJlYWQ6cmVzb3VyY2Vfc2VydmVycyBjcmVhdGU6cmVzb3VyY2Vfc2VydmVycyByZWFkOmRldmljZV9jcmVkZW50aWFscyByZWFkOmxvZ3MiLCJndHkiOiJjbGllbnQtY3JlZGVudGlhbHMiLCJhenAiOiJNaFp3ZHpxallMRjFFRTFUaUJaNTB3bnhSMTdjeXEyTSJ9.pAuAG8nwz-MhBvV1y1gZcTDgBFejCrSFu--5Zbu4zNkvVP7n7iDL6Prp7Wr3LbPLytYKaUghHxtqNW0maukxC8-8p4NvePaeDvGEo1dTUjpSsHlzVHHDTkjhPyvPRS7I0sU5ECNBcH7LiTmR2o6k2bShMmWr-BGy2xNNLn4n57UH51rUIIroEY96w7ZG67R62r6-NE5Z3KSNic36mClivZU1ESnw0rNSwVLH5vSC54IKUG8NGCWW4-e4WTTir89VQelpB9T4ajS7cipJ8G7H_r2VSB783-76vrtlVQmB45MF9FQWc2Ftrre9rVpl5yTvL_1J6iu--q-4XLVz1sy8iA'
+
+
+    ### Step 3: Get Your Auth0 Domain
 
 From Auth0 Dashboard → Settings → General:
-```
+```:
 Domain: dev-4fszoklachwdh46m.us.auth0.com
+ClientID:MhZwdzqjYLF1EE1TiBZ50wnxR17cyq2M
+ClientSecret:DXCPx-T-YNPd7cxUn4F_zthZfjaAmzbHlYJ5fuOnsKQ3lI-HiX1Ov9sHTy-cKbND
 Tenant: dev-4fszoklachwdh46m
 Region: us
 ```
@@ -166,9 +181,9 @@ Create `server/config.json` (from `server/config.example.json`):
   "WT_URL": "http://localhost:3000",
   "PUBLIC_WT_URL": "http://localhost:3000",
   "AUTH0_DOMAIN": "dev-4fszoklachwdh46m.us.auth0.com",
-  "EXTENSION_CLIENT_ID": "SFV4AVu8vOl4YbXxkv6Ld4pZaYQXUcD0",
+  "EXTENSION_CLIENT_ID": "MhZwdzqjYLF1EE1TiBZ50wnxR17cyq2M",
   "AUTH0_CLIENT_ID": "MhZwdzqjYLF1EE1TiBZ50wnxR17cyq2M",
-  "AUTH0_CLIENT_SECRET": "DXCPx-T-YNPd7cxUn4F_zthZfjaAmzbHlYJ5fuOnsKQ3lI-HiX1Ov9sHTy-cKbND",
+  "AUTH0_CLIENT_SECRET": "MhZwdzqjYLF1EE1TiBZ50wnxR17cyq2M",
   "TITLE": "HOLE Foundation Portal",
   "CUSTOM_CSS": "http://localhost:3000/hole-foundation-theme.css"
 }
@@ -812,3 +827,4 @@ AUTH0_MANAGE_URL=https://manage.auth0.com
 ---
 
 *End of Configuration Guide*
+
