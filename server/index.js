@@ -35,6 +35,7 @@ export default (configProvider, storageProvider) => {
     domain: config('AUTH0_DOMAIN'),
     baseUrl: config('PUBLIC_WT_URL'),
     clientName: 'SSO Dashboard',
+    clientId: config('EXTENSION_CLIENT_ID'),
     urlPrefix: '/admins',
     sessionStorageKey: 'sso-dashboard:apiToken',
     scopes: 'read:clients delete:clients read:connections read:resource_servers create:resource_servers read:client_grants create:client_grants delete:client_grants'
